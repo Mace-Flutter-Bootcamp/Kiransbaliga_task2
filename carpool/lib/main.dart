@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
       initialRoute:WelcomeScreen.id,
       routes:{
           WelcomeScreen.id:(context)=> WelcomeScreen(),
-          LoginScreen.id:(context)=> WelcomeScreen(),
-          RegistrationScreen.id:(context)=> WelcomeScreen(),
-          InfoScreen.id:(context)=> WelcomeScreen(),
+          LoginScreen.id:(context)=> LoginScreen(),
+          RegistrationScreen.id:(context)=> RegistrationScreen(),
+          InfoScreen.id:(context)=> InfoScreen(),
 
       },
     );

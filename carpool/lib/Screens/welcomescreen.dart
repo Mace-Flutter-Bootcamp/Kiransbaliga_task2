@@ -21,19 +21,19 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Hero(
-                    tag: 'logo',
-                    child: Container(
-                      child: Image.asset(''),
-                      height: 60.0,
-                    ),
+              Container(
+                alignment: Alignment.center,
+                child: Text(
+                  'Carpool!',
+                  style: TextStyle(
+                    fontSize:88,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.amber,
                   ),
-                ],
+                ),
               ),
               SizedBox(
-                height: 48.0,
+                height: 98.0,
               ),
               FlatButton(
                 onPressed: () {
@@ -44,7 +44,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
-                    color: Colors.black26,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -60,7 +60,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
-                    color: Colors.black26,
+                    color: Colors.white,
                   ),
                 ),
               ),
