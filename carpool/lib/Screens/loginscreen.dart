@@ -1,6 +1,7 @@
 import 'package:carpool/Screens/infoscreen.dart';
 import 'package:carpool/components/txtfield.dart';
 import 'package:flutter/material.dart';
+import 'package:carpool/components/data.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = "login_screen";
@@ -10,6 +11,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  NeedRide obj;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     hinttext: 'Enter Starting point',
                     b: false,
                     onchanged: (value) {
-                      print("value");
+                      obj.start = value;
                     }),
                 SizedBox(
                   height: 30,
@@ -53,7 +55,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     hinttext: 'Enter destination',
                     b: false,
                     onchanged: (value) {
-                      print("value");
+                      obj.dest = value;
+                      s = value;
                     }),
                 SizedBox(
                   height: 30,
@@ -72,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     hinttext: 'your name',
                     b: false,
                     onchanged: (value) {
-                      print("value");
+                      obj.name = value;
                     }),
                 SizedBox(
                   height: 30,
@@ -91,14 +94,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     hinttext: 'Enter contact number',
                     b: false,
                     onchanged: (value) {
-                      print("value");
+                      obj.phone = value;
                     }),
                 SizedBox(
                   height: 30,
                 ),
                 FlatButton(
                   onPressed: () {
-                    Navigator.pushNamed(context,InfoScreen.id);
+                    nr.add(obj);
+                    getorneed = 0;
+                    Navigator.pushNamed(context, InfoScreen.id);
                   },
                   color: Colors.lightBlue,
                   child: Text(

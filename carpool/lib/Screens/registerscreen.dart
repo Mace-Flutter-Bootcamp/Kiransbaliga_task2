@@ -1,8 +1,7 @@
 import 'package:carpool/components/txtfield.dart';
 import 'package:flutter/material.dart';
-
+import 'package:carpool/components/data.dart';
 import 'infoscreen.dart';
-
 
 class RegistrationScreen extends StatefulWidget {
   static String id = "registration_screen";
@@ -11,10 +10,11 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  GetRide obj;
   @override
   Widget build(BuildContext context) {
     return Container(
-      child:  Scaffold(
+      child: Scaffold(
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(48.0),
@@ -35,7 +35,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     hinttext: 'Enter Starting point',
                     b: false,
                     onchanged: (value) {
-                      print("value");
+                      obj.start = value;
                     }),
                 SizedBox(
                   height: 30,
@@ -54,7 +54,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     hinttext: 'Enter destination',
                     b: false,
                     onchanged: (value) {
-                      print("value");
+                      obj.dest = value;
+                      s = value;
                     }),
                 SizedBox(
                   height: 30,
@@ -73,7 +74,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     hinttext: 'your name',
                     b: false,
                     onchanged: (value) {
-                      print("value");
+                      obj.name = value;
                     }),
                 SizedBox(
                   height: 30,
@@ -92,14 +93,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     hinttext: 'Enter contact number',
                     b: false,
                     onchanged: (value) {
-                      print("value");
+                      obj.phone = value;
                     }),
                 SizedBox(
                   height: 30,
                 ),
                 FlatButton(
-                  onPressed:  () {
-                    Navigator.pushNamed(context,InfoScreen.id);
+                  onPressed: () {
+                    gr.add(obj);
+                    getorneed = 1;
+                    Navigator.pushNamed(context, InfoScreen.id);
                   },
                   color: Colors.lightBlue,
                   child: Text(
@@ -108,7 +111,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       color: Colors.white,
                     ),
                   ),
-                  
                 )
               ],
             ),
